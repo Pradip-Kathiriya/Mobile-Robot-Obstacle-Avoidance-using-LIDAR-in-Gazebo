@@ -23,7 +23,7 @@ def move_car(scanning_area):
     
     scanning_status= ''
     
-    if scanning_area['front'] > 3 and scanning_area['front_left'] > 3 and scanning_area['front_right'] > 3:
+    if scanning_area['front'] > 4 and scanning_area['front_left'] > 4 and scanning_area['front_right'] > 4:
         scanning_status = 'There is nothing in front of car. Car is moving forward'
         rospy.loginfo(scanning_status)
         msg1 = 10
@@ -33,57 +33,57 @@ def move_car(scanning_area):
         pub1.publish(msg2)
         pub2.publish(-msg2)
         
-    elif scanning_area['front'] < 3 and scanning_area['front_left'] < 3 and scanning_area['front_right'] < 3:
+    elif scanning_area['front'] < 4 and scanning_area['front_left'] < 4 and scanning_area['front_right'] < 4:
         scanning_status = 'There is a obstacle in front of car. Car is steeing toward right side'
         rospy.loginfo(scanning_status)
         msg1 = 10
         pub3.publish(msg1)
         pub4.publish(-msg1)
-        msg2 = -3.0
+        msg2 = -4.0
         pub1.publish(msg2)
         pub2.publish(-msg2)
         
-    elif scanning_area['front'] < 3 and scanning_area['front_left'] < 3 and scanning_area['front_right'] > 3:
+    elif scanning_area['front'] < 4 and scanning_area['front_left'] < 4 and scanning_area['front_right'] > 4:
         scanning_status = 'There is a obstacle in front or front left  of car. Car is steeing toward right side'
         rospy.loginfo(scanning_status)
         msg1 = 10
         pub3.publish(msg1)
         pub4.publish(-msg1)
-        msg2 = -3.0
+        msg2 = -4.0
         pub1.publish(msg2)
         pub2.publish(-msg2)
         
-    elif scanning_area['front'] < 3 and scanning_area['front_left'] > 3 and scanning_area['front_right'] < 3:
+    elif scanning_area['front'] < 4 and scanning_area['front_left'] > 4 and scanning_area['front_right'] < 4:
         scanning_status = 'There is a obstacle front or front right of car. Car is steeing toward left side'
         rospy.loginfo(scanning_status)
         msg1 = 10
         pub3.publish(msg1)
         pub4.publish(-msg1)
-        msg2 = 3.0
+        msg2 = 4.0
         pub1.publish(msg2)
         pub2.publish(-msg2)
         
-    elif scanning_area['front'] > 3 and scanning_area['front_left'] < 3 and scanning_area['front_right'] > 3:
+    elif scanning_area['front'] > 4 and scanning_area['front_left'] < 4 and scanning_area['front_right'] > 4:
         scanning_status = 'There is a obstacle in front left  of car. Car is steeing toward right side'
         rospy.loginfo(scanning_status)
         msg1 = 10
         pub3.publish(msg1)
         pub4.publish(-msg1)
-        msg2 = -3.0
+        msg2 = -4.0
         pub1.publish(msg2)
         pub2.publish(-msg2)
         
-    elif scanning_area['front'] > 3 and scanning_area['front_left'] > 3 and scanning_area['front_right'] < 3:
+    elif scanning_area['front'] > 4 and scanning_area['front_left'] > 4 and scanning_area['front_right'] < 4:
         scanning_status = 'There is a obstacle in front right of car. Car is steeing toward right side'
         rospy.loginfo(scanning_status)
         msg1 = 10
         pub3.publish(msg1)
         pub4.publish(-msg1)
-        msg2 = 3.0
+        msg2 = 4.0
         pub1.publish(msg2)
         pub2.publish(-msg2)
         
-    elif scanning_area['front'] > 3 and scanning_area['front_left'] < 3 and scanning_area['front_right'] < 3:
+    elif scanning_area['front'] > 4 and scanning_area['front_left'] < 4 and scanning_area['front_right'] < 4:
         scanning_status = 'There is a nothing in front of car. Car is moving forward'
         rospy.loginfo(scanning_status)
         msg1 = 10
