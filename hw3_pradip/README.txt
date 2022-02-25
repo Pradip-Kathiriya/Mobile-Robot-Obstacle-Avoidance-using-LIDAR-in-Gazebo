@@ -1,5 +1,5 @@
 ## This is a readme file for HW3 of ENPM 690
-## Following software/packages are required to run the package.
+## Following software/repo are required to run the package.
 
 1. Ubuntu 180.04
 2. ROS melodic
